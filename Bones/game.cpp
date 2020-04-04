@@ -4,31 +4,35 @@
 #include <cstdio>
 using namespace std;
 
-int GenerateRand(int throws){
+int Core(int TotalInMass){
     srand(time(0));
     int TotalRand;
+    int throws=6;
 
-    for ( throws = 1; throws < 6; throws++){
-       TotalRand = (rand() % 6 +1);
-       cout<<"Throw "<<throws<<": "<<TotalRand<<endl;
-    }
-
-return 0;
-}
-
-int CheckValues(int TotalRand, int TotalInMass){
-    int throws;
-
-    for (int i = 0; i < 6; i++){
-        if(TotalRand == 5){
-            if(TotalInMass == 5){
-
+    for (int i = 0; i < throws; i++){
+        if(TotalRand = 5){
+            throws--;
+            for (int i = 0; i < throws; i++){
+                TotalRand = (rand() % 6 +1);
+                cout<<"Throw "<<i<<": "<<TotalRand<<endl;
+            }
+            cout<<endl;
+        }else{
+            if(TotalRand = 1){
+                throws--;
+                for (int i = 0; i < throws; i++){
+                    TotalRand = (rand() % 6 +1);
+                    cout<<"Throw "<<i<<": "<<TotalRand<<endl;
+                }
+                cout<<endl;
             }
         }
+
     }
 }
 
-int SaveValues(int nP,int nC){
+
+void SaveValues(int nP,int nC){
     int n;
     int arrP[n];
     int arrC[n];
@@ -46,16 +50,14 @@ int main (){
     char enter;
 
     LogoGame();
-
     cin>>enter;
     cout<<endl;
 
-    if(enter=='n'){
+    if(enter == 'n'){
         cout<<"Exit..."<<endl;
         exit(1);
     }else{
-        GenerateRand(6);
-        //CheckValues(GenerateRand());
+        Core(5);
     }
 
 return 0;
